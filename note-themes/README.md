@@ -11,6 +11,7 @@ note系スキル（note-auto / note-outline / note-write / note-image / note-tou
 | `ai-fukugyo.md` | AI×副業。**記入例**（そのまま使わず、自分のものを作る） |
 | `mile.md` | マイル・陸マイラー。**記入例** |
 | `ryori.md` | 料理・時短ごはん。**記入例** |
+| `sumaho-ai.md` | スマホ1台で、会社員がAI副業から独立をめざす記録。**あなたのテーマ** |
 | `_template.md` | 新しいジャンルを作るときのひな形 |
 
 ## テーマの決まり方
