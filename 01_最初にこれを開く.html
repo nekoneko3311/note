@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>note記事づくりキット — スタートガイド</title>
+<style>
+  :root {
+    --accent: #E8703A;
+    --accent-soft: #FBE4CE;
+    --ink: #1B2A4A;
+    --gray: #6b7280;
+    --cream: #FDF8F0;
+    --marker: #FFE08A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.9;
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .hero {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(232,112,58,.10);
+    margin-bottom: 28px;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 4px 18px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 26px; font-weight: 900; line-height: 1.5; }
+  h1 .o { color: var(--accent); }
+  .hero p { color: var(--gray); margin-top: 10px; font-size: 15px; }
+  .lead-note {
+    background: var(--accent-soft);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 40px 0 16px;
+    padding-left: 14px;
+    border-left: 6px solid var(--accent);
+  }
+  .step {
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 14px rgba(27,42,74,.06);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .step .num {
+    flex: none;
+    width: 40px; height: 40px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 19px;
+  }
+  .step h3 { font-size: 17px; font-weight: 900; margin-bottom: 6px; }
+  .step p { font-size: 15px; }
+  .step .sub { color: var(--gray); font-size: 13.5px; margin-top: 6px; }
+  .say {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 6px 0;
+  }
+  a { color: var(--accent); font-weight: 700; word-break: break-all; }
+  mark { background: var(--marker); padding: 0 3px; font-weight: 700; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px rgba(27,42,74,.06);
+    font-size: 14px;
+  }
+  th, td { padding: 12px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-size: 13.5px; }
+  tr:not(:last-child) td { border-bottom: 1px dashed #e5d9c8; }
+  td:first-child { font-weight: 700; width: 42%; }
+  .safe {
+    background: #fff;
+    border: 2.5px solid var(--accent);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  .safe li { margin-left: 1.3em; }
+  .foot {
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px dashed #e5d9c8;
+    color: var(--gray);
+    font-size: 13.5px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="badge">note記事づくりキット</span>
+    <h1>話しかけるだけで、<br>noteの<span class="o">下書き</span>までできあがる</h1>
+    <p>構成 → 本文 → 画像 → noteの下書き。あなたは確認して、公開ボタンを押すだけ。</p>
+    <div class="lead-note">やることは3つだけ。このページの順番どおりに進めてください。</div>
+    <div class="lead-note" style="background:#fff;border:2.5px solid var(--accent);margin-top:12px;">その前に、同じフォルダの <mark>00_はじめに読む注意書き.md</mark> に目を通してください（3分ほど）。<br><span style="font-weight:400;font-size:14px;color:var(--gray)">noteの規約の扱い、書いた内容がどこへ送られるか、やめ方が書いてあります。</span></div>
+    <div class="lead-note" style="background:#fff;border:2.5px dashed var(--gray);margin-top:10px;font-weight:400;font-size:14px;color:var(--gray);text-align:left;"><b style="color:var(--ink)">Windowsをお使いの方へ。</b> このキットは <b style="color:var(--ink)">Macで動作確認をしています。Windowsは未確認（ベータ）</b>です。動く見込みで作ってありますが、途中で詰まることがあります。その場合は画面の文字をそのままClaudeに貼って相談してください。詳しくは <mark>Windows導入ガイド.md</mark> をご覧ください。</div>
+    <p style="margin-top:14px;font-size:14px;">
+      うまく進まないときは、このページを開いたままClaudeに<br>
+      「<b>スタートガイドのとおりに進めたい</b>」と伝えれば、続きを案内してくれます。
+    </p>
+  </div>
+
+  <h2>進め方（3ステップ）</h2>
+  <p style="font-size:14px;color:var(--gray);margin:-6px 0 16px;">
+    すでにClaudeをお使いなら、ステップ2から20〜30分ほどで終わります（質問への回答とダウンロードを含みます）。<br>
+    はじめての方は、ステップ1（アプリの導入とプラン加入）に少し余裕を見てください。
+  </p>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div>
+      <h3>Claudeのアプリを入れる</h3>
+      <p><a href="https://claude.com/ja/download">claude.com/ja/download</a> からダウンロードして、アカウントを作ります。</p>
+      <p class="sub">有料プラン（Pro・月20ドル。税別・使える量に上限あり）への加入が必要です。Claudeは18歳以上の方が対象です。アプリ内の案内から加入できます。すでに使っている方はこのステップは飛ばしてください。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div>
+      <h3>Claudeで、このフォルダを開く</h3>
+      <p>Claudeアプリの上にある「<b>Code</b>」タブを選ぶ →「フォルダを選択」で、この <b>note-kit</b> フォルダを選びます。</p>
+      <p class="sub">「note-kit」の中にもうひとつ「note-kit」が入っていたら、内側のほうを選んでください（解凍のしかたで二重になることがあります）。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <div>
+      <h3>入力欄にこう打つ</h3>
+      <p><span class="say">セットアップして</span></p>
+      <p>あとはAIが道具の準備からぜんぶ案内してくれます。全体で20〜30分ほどです（質問への回答とダウンロードを含みます）。<b>途中で「このコマンドを実行してもいいですか」と確認が出ます。</b>内容を見て許可してください（分からなければ「これは何をするコマンドですか」と聞けば説明してくれます）。</p>
+      <p class="sub">途中であなたがやるのは3つ：画像づくりの道具を選ぶ（おすすめが提示されます）／開いたブラウザでnoteにログインする／<mark>いくつかの質問</mark>に答える。あなたの文章に近づけるためのもので、1問ずつ聞かれます（必須のぶんは5分ほど。そのあとに続く任意の8問（5分ほど）は、飛ばしてもかまいません）。Codexを入れる場合だけ、初回のログインで1回ターミナルに <b>codex</b> と打ちます（Claudeが案内します）。終わったら<mark>Claudeのアプリを終了して起動し直し</mark>、「Code」タブで <b>note-kit</b> フォルダ（ホームフォルダの中）を選び直してください。</p>
+    </div>
+  </div>
+
+  <h2>1本目を書く</h2>
+
+  <div class="step">
+    <div class="num">✎</div>
+    <div>
+      <p>開き直したClaudeに、こう話しかけるだけです。</p>
+      <p><span class="say">noteを書いて</span></p>
+      <p class="sub">テーマが決まっているなら「『AIで議事録を作る方法』というテーマで3000文字のnoteを書いて」のように伝えてください。本文と画像あわせて20〜35分ほどで、記事が仕上がります。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">↓</div>
+    <div>
+      <h3>仕上がったら、noteの下書きに入れる</h3>
+      <p>記事ができたら、そのまま続けてこう伝えるだけです。</p>
+      <p><span class="say">入稿して</span></p>
+      <p class="sub">ブラウザが自動で開いて、タイトル・本文・画像が入り、noteの下書きが保存されます。3〜5分ほど（画像が多いと10分近く）で終わります。<mark>入稿でターミナルを開く必要はありません。</mark>公開ボタンだけは自動で押さないので、最後はご自身で確かめてから公開してください。</p>
+    </div>
+  </div>
+
+  <h2>困ったら</h2>
+
+  <table>
+    <tr><th>こうなったら</th><th>こうしてください</th></tr>
+    <tr><td>「セットアップして」に反応しない</td><td>「Code」タブでこの note-kit フォルダを選べているか確認する</td></tr>
+    <tr><td>「noteを書いて」に反応しない</td><td>Claudeのアプリを終了して起動し直し、「Code」タブでホームフォルダの中の note-kit を選び直す（セットアップ後は再起動が必要です）</td></tr>
+    <tr><td>途中で止まった・エラーが出た</td><td>同じ操作を繰り返さず、画面の文章をそのままコピーしてClaudeに貼って相談する</td></tr>
+    <tr><td>使用上限に当たって止まった</td><td>表示された時刻まで待って「続きから」と伝える（「Code」タブで「Auto-continue when limits reset」にチェックすると、自動で再開します）</td></tr>
+    <tr><td>画像づくりが止まって見える</td><td>1枚2〜3分かかります。1枚ごとに「3枚目/7枚」と出ます。その表示が5分以上変わらなければ「止まっていませんか」と伝える</td></tr>
+    <tr><td>記事が自分らしくない</td><td>「文章のサンプルを貼り直したい」と伝えて、長めの文章を渡す</td></tr>
+    <tr><td>もっと詳しく知りたい</td><td>同じフォルダの「はじめにお読みください.md」をClaudeに開いてもらう</td></tr>
+  </table>
+
+  <h2>安心して使うために</h2>
+
+  <div class="safe">
+    <ul>
+      <li><b>公開ボタンは自動で押しません。</b>記事は下書きまで。公開は必ずあなたの手で行います</li>
+      <li><b>パスワードは保存されません。</b>noteへのログインはあなた自身がブラウザで行い、「ログイン済みの状態」だけがこのパソコンに残ります</li>
+      <li><b>各プランで使える量の範囲なら、1枚ごと・1記事ごとの追加料金はありません。</b>かかるのは月々のプラン料金だけです（Claude Pro。見出し画像と人物イラストも作るなら、ChatGPT Plus（日本では月3,000円ほど）以上も必要です）</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    版：VERSION.md を見てください。<br>
+    どんな画像ができるかは「画像の見本」フォルダをご覧ください。<br>
+    このガイドで分からないことは、Claudeにこのページのスクリーンショットを貼って聞いても大丈夫です。
+  </div>
+
+</div>
+</body>
+</html>
