@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+import { resolve } from 'node:path';
+const url = process.argv[2];
+const browser = await chromium.launch({ headless: false });
+const context = await browser.newContext({ storageState: resolve('storage/note-auth.json'), viewport: { width: 1280, height: 1600 } });
+const page = await context.newPage();
+await page.goto(url, { waitUntil: 'domcontentloaded' });
+await page.waitForSelector('textarea[placeholder="記事タイトル"]', { timeout: 45000 });
+await page.waitForTimeout(2500);
+await page.screenshot({ path: 'screenshots/verify-top.png' });
+console.log('title:', await page.locator('textarea[placeholder="記事タイトル"]').inputValue().catch(()=>'')); 
+const imgs = await page.evaluate(()=>document.querySelectorAll('[role="textbox"] img, figure img').length);
+console.log('本文の画像数(img要素):', imgs);
+await browser.close();

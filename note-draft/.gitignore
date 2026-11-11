@@ -1,0 +1,19 @@
+# === 秘密情報：絶対にコミットしない ===
+storage/note-auth.json
+storage/*.json
+.env
+
+# ログ・スクリーンショット（本文や画面が写るため共有しない）
+logs/*
+!logs/.gitkeep
+screenshots/*
+!screenshots/.gitkeep
+
+# 依存・生成物
+node_modules/
+dist/
+*.log
+tests/.tmp-*/
+
+# OS
+.DS_Store

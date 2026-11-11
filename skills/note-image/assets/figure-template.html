@@ -1,0 +1,72 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
+/* ===== note-image 共通テンプレート =====
+   使い方：このファイルをコピーし、<body>内の「本体」だけ差し替える。
+   配色・カード・番号バッジ・チャットUI・下帯の共通スタイルは下に入っている。
+   サイズは html,body の width/height と render-figure.mjs の引数を一致させる。 */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1600px;height:900px;overflow:hidden}       /* ← サイズはここで変える */
+body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  background:linear-gradient(168deg,#fffdf9 0%,#fdf4e7 100%);color:#1B2A4A;position:relative;
+  word-break:keep-all;line-break:strict}
+
+/* 上段：見出し（キーワードは .o でオレンジ、一語は .ul で下線） */
+.head{text-align:center;padding:56px 0 0}
+.head h1{font-size:68px;font-weight:900;letter-spacing:.02em;display:inline-block}
+.head .o{color:#f5822b}
+.head .ul{position:relative}
+.head .ul::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:8px;background:#fbcf9e;border-radius:5px;z-index:-1}
+
+/* 角丸カード＋番号バッジ */
+.card{position:relative;background:#fff;border:2.5px solid #f4b271;border-radius:24px;
+  padding:26px 26px 24px;box-shadow:0 12px 26px rgba(190,130,50,.10)}
+.badge{position:absolute;top:-26px;left:50%;transform:translateX(-50%);width:54px;height:54px;
+  border-radius:50%;background:#f5822b;color:#fff;font-size:28px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 5px 12px rgba(0,0,0,.14)}
+.ic{width:96px;height:96px;margin:0 auto 14px;border-radius:50%;background:#fdecda;color:#f5822b;
+  display:flex;align-items:center;justify-content:center}
+.ic svg{width:52px;height:52px}
+.name{font-size:28px;font-weight:900;text-align:center;margin-bottom:10px}
+.card p{font-size:19px;font-weight:600;line-height:1.7;color:#41495c}
+.em{color:#f5822b;font-weight:900}
+
+/* チャットUI（AIとのやりとり再現） */
+.chat{background:#fff;border-radius:26px;box-shadow:0 16px 34px rgba(120,80,30,.13);overflow:hidden;display:flex;flex-direction:column}
+.chat .bar{background:#1B2A4A;color:#fff;padding:16px 22px;display:flex;align-items:center;gap:13px;font-size:22px;font-weight:800}
+.chat .bar .av{width:42px;height:42px;border-radius:50%;background:#f5822b;display:flex;align-items:center;justify-content:center}
+.chat .msgs{padding:26px;display:flex;flex-direction:column;gap:18px}
+.b{max-width:76%;padding:15px 19px;font-size:19px;font-weight:600;line-height:1.6;border-radius:18px}
+.ai{align-self:flex-start;background:#eef1f5;color:#1B2A4A;border-bottom-left-radius:5px}
+.me{align-self:flex-end;background:#fce7d4;color:#5a3a1a;border-bottom-right-radius:5px}
+.chat .input{margin:0 22px 22px;border:2px solid #ece6db;border-radius:15px;padding:14px 18px;color:#a49c8c;font-size:17px;display:flex;justify-content:space-between;align-items:center}
+
+/* 下段：オレンジの帯（まとめ一言。強調は .navy で濃紺反転） */
+.foot{position:absolute;left:60px;right:60px;bottom:44px;background:#f5822b;border-radius:22px;
+  padding:22px 0;text-align:center;color:#fff;font-size:37px;font-weight:900;
+  box-shadow:0 10px 22px rgba(245,130,43,.28);display:flex;align-items:center;justify-content:center;gap:16px}
+.foot .navy{color:#1B2A4A}
+.foot .ck{width:50px;height:50px;border-radius:50%;background:#1B2A4A;display:flex;align-items:center;justify-content:center}
+.foot .ck svg{width:28px;height:28px}
+</style></head><body>
+
+<!-- ▼ 上段：見出し -->
+<div class="head"><h1>ここに<span class="o">見出し</span>を<span class="ul">書く</span></h1></div>
+
+<!-- ▼ 中段：本体（ここを差し替える。以下はカードの例） -->
+<div style="display:flex;justify-content:center;gap:30px;padding:70px 70px 0">
+  <div class="card" style="width:420px;text-align:center">
+    <div class="badge">1</div>
+    <div class="ic"><!-- SVGアイコンを入れる（絵文字は使わない） -->
+      <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="3" stroke="currentColor" stroke-width="3"/><path d="M17 20h14M17 27h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+    </div>
+    <div class="name">カード見出し</div>
+    <p>説明文。長いときは読点で<br><span class="em">キーワード</span>を強調。</p>
+  </div>
+</div>
+
+<!-- ▼ 下段：オレンジ帯 -->
+<div class="foot">
+  <span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  まとめの<span class="navy">一言</span>をここに
+</div>
+
+</body></html>
